@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Window</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="title">Hello World</div>
+            <span></span>
+            <div class="buttons">
+                <div class="btn" id="min">.</div>
+                <div class="btn" id="min-max">.</div>
+                <div class="btn" id="close">.</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="listView">
+                <div class="optionGroup">
+                    <div class="title">
+                        <div class="arrow"></div>
+                        <div class="text">Group 1</div>
+                    </div>
+                    <div class="option">Option 1</div>
+                    <div class="option">Option 2</div>
+                    <div class="option">Option 3</div>
+                </div>
+                <div class="optionGroup close">
+                    <div class="title">
+                        <div class="arrow"></div>
+                        <div class="text">Group 2</div>
+                    </div>
+                    <div class="option">Option 1</div>
+                    <div class="option">Option 2</div>
+                    <div class="option">Option 3</div>
+                </div>
+                <div class="optionGroup close">
+                    <div class="title">
+                        <div class="arrow"></div>
+                        <div class="text">Group 3</div>
+                    </div>
+                    <div class="option">Option 1</div>
+                    <div class="option">Option 2</div>
+                    <div class="option">Option 3</div>
+                </div>
+                <div class="optionGroup close">
+                    <div class="title">
+                        <div class="arrow"></div>
+                        <div class="text">Group 4</div>
+                    </div>
+                    <div class="option">Option 1</div>
+                    <div class="option">Option 2</div>
+                    <div class="option">Option 3</div>
+                </div>
+                <div class="optionGroup close">
+                    <div class="title">
+                        <div class="arrow"></div>
+                        <div class="text">Group 5</div>
+                    </div>
+                    <div class="option">Option 1</div>
+                    <div class="option">Option 2</div>
+                    <div class="option">Option 3</div>
+                </div>    
+            </div>
+            <!-- <div class="main" style="background: #FFF"> -->
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let listView = document.querySelector('.listView')
+        listView.childNodes.forEach(element => {
+            element.addEventListener('click', (e)=>{
+                if(element.classList.contains('close'))
+                    element.classList.remove('close')
+                else
+                    element.classList.add('close')
+            })
+
+            let i = 1;
+
+            element.childNodes.forEach(subelement =>{
+                if(subelement.className == 'option'){
+                    subelement.value = i++;
+                    subelement.addEventListener('click', (e)=>{
+                        e.preventDefault()
+                        e.stopPropagation()
+                        document.querySelector('.content .main').innerHTML = `Option ${subelement.value}`
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+</html>
