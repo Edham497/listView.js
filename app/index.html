@@ -66,12 +66,13 @@
                     <div class="option">Option 3</div>
                 </div>    
             </div>
-            <!-- <div class="main" style="background: #FFF"> -->
+            <div class="main flex col cc">
 
             </div>
         </div>
     </div>
     <script>
+        let j = 0;
         let listView = document.querySelector('.listView')
         listView.childNodes.forEach(element => {
             element.addEventListener('click', (e)=>{
@@ -85,13 +86,14 @@
 
             element.childNodes.forEach(subelement =>{
                 if(subelement.className == 'option'){
+                    subelement.group = j;
                     subelement.value = i++;
                     subelement.addEventListener('click', (e)=>{
                         e.preventDefault()
                         e.stopPropagation()
-                        document.querySelector('.content .main').innerHTML = `Option ${subelement.value}`
+                        document.querySelector('.content .main').innerHTML = `Option ${subelement.group}_${subelement.value}`
                     })
-                }
+                }else if(subelement.className == 'title')j++;
             })
         })
     </script>

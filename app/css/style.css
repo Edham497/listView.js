@@ -15,6 +15,7 @@ html, body {
   width: 100%;
   height: 100%;
   position: relative;
+  background: #f1f1f1;
 }
 
 .main::before {
@@ -46,6 +47,7 @@ html, body {
   text-align: center;
   padding: 0 1em;
   font-size: 11px;
+  font-weight: 600;
 }
 
 .main .header .buttons {
@@ -81,6 +83,7 @@ html, body {
   padding-bottom: 30px;
   width: 30%;
   height: 100%;
+  background: #DADADA;
   overflow: auto;
 }
 
@@ -144,5 +147,34 @@ html, body {
 
 .listView::-webkit-scrollbar-thumb {
   background: gray;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex.col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex.col.cc {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex.row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 /*# sourceMappingURL=style.css.map */
