@@ -12,10 +12,15 @@ html, body {
 }
 
 .main {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 100%;
   height: 100%;
   position: relative;
-  background: #f1f1f1;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .main::before {
@@ -32,7 +37,6 @@ html, body {
   width: 100%;
   height: 100%;
   max-height: 36px;
-  background: #FFF;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto 1fr auto;
@@ -74,6 +78,10 @@ html, body {
   overflow: hidden;
 }
 
+.main .content .main {
+  border-radius: 0;
+}
+
 .listView {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -83,7 +91,6 @@ html, body {
   padding-bottom: 30px;
   width: 30%;
   height: 100%;
-  background: #DADADA;
   overflow: auto;
 }
 
@@ -94,7 +101,6 @@ html, body {
 .listView .optionGroup .title .arrow {
   -webkit-transition: .05s ease-in-out;
   transition: .05s ease-in-out;
-  background-image: url("../ico/contraer.png");
   background-repeat: no-repeat;
   background-size: 15px 15px;
   background-position: center;
@@ -117,17 +123,9 @@ html, body {
 }
 
 .listView .optionGroup .option {
-  padding: 0 32px;
+  padding-left: 48px;
   -webkit-transition: .15s ease-in-out;
   transition: .15s ease-in-out;
-}
-
-.listView .optionGroup .option:hover {
-  background: #FFFFFF;
-}
-
-.listView .optionGroup:hover > .title {
-  background: #FFFFFF;
 }
 
 .listView .optionGroup.close > .option {
@@ -147,6 +145,70 @@ html, body {
 
 .listView::-webkit-scrollbar-thumb {
   background: gray;
+}
+
+.fluent_light .main {
+  background: #e2e2e2d7;
+  color: #0a0a0a;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.fluent_light .main .header, .fluent_light .main .content.main {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  background: #FFFFFF;
+  color: #0a0a0a;
+}
+
+.fluent_light .main .listView .optionGroup .title .arrow {
+  background-image: url("../ico/contraer.png");
+}
+
+.fluent_light .main .listView .option {
+  color: #0a0a0a;
+  border: solid transparent 1px;
+}
+
+.fluent_light .main .listView .option:hover {
+  border: solid gray 1px;
+  background: #FFFFFF;
+}
+
+.fluent_light .main .listView .option:hover:active {
+  background: darkgray;
+}
+
+.fluent_dark .main {
+  background: #000000cb;
+  color: #DADADA;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.fluent_dark .main .header, .fluent_dark .main .content.main {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  background: #000000a0;
+  color: #DADADA;
+}
+
+.fluent_dark .main .listView .optionGroup .title .arrow {
+  background-image: url("../ico/contraer_FFF.png");
+}
+
+.fluent_dark .main .listView .option {
+  color: #DADADA;
+  border: solid transparent 1px;
+}
+
+.fluent_dark .main .listView .option:hover {
+  border: solid gray 1px;
+  background: #000000a0;
+}
+
+.fluent_dark .main .listView .option:hover:active {
+  background: darkgray;
 }
 
 .flex {

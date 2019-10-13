@@ -4,7 +4,6 @@
     padding-bottom: 30px;
     width: 30%;
     height: 100%;
-    background: #DADADA;
     overflow: auto;
 
     .optionGroup{
@@ -15,7 +14,7 @@
 
             .arrow{
                 transition: .05s ease-in-out;
-                background-image: url("../ico/contraer.png");
+                // background-image: url("../ico/contraer.png");
                 background-repeat: no-repeat;
                 background-size: 15px 15px;
                 background-position: center;
@@ -35,16 +34,8 @@
         }
 
         .option{
-            padding: 0 32px;
+            padding-left: 48px;
             transition: .15s ease-in-out;
-            
-            &:hover{
-                background: #FFFFFF;
-            }
-        }
-
-        &:hover > .title{
-            background: #FFFFFF;
         }
 
         &.close>.option{

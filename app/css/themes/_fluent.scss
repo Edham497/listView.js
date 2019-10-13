@@ -1,0 +1,133 @@
+@mixin createTheme($name, $arrow, $transition, $colors...){
+    .#{$name}{
+        .main{
+            background: nth($colors, 1);
+            color: nth($colors, 3);
+            transition: $transition;
+
+            .header, .content.main{
+                transition: $transition;
+                background: nth($colors, 2);
+                color: nth($colors, 3);
+            }
+            .listView{
+                .optionGroup .title .arrow{
+                    background-image: $arrow;
+                }
+                .option{
+                    color: nth($colors, 3);
+                    border: solid transparent 1px;
+
+                    &:hover{
+                        border: solid gray 1px;
+                        background: nth($colors, 2);
+                        &:active{
+                            background: darkgray;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include createTheme('fluent_light', url("../ico/contraer.png"), .5s ease-in-out,
+    $transparentbg:#e2e2e2d7,
+    $solidbg: #FFFFFF,
+    $fontc: #0a0a0a
+);
+@include createTheme('fluent_dark', url("../ico/contraer_FFF.png"), .5s ease-in-out,
+    $transparentbg:#000000cb,
+    $solidbg: #000000a0,
+    $fontc: #DADADA
+);
+
+// .fluent{
+//     &_light{
+//         .main{
+//             background: #e2e2e2d7;
+
+//             .header{
+//                 background: #FFFFFF;
+//                 color: #202020;
+//             }
+
+//             .content{
+//                 .main{
+//                     background: #FFF;
+//                     color: #202020;
+//                 }
+//             }
+
+//             .listView{
+//                 background: inherit;
+
+//                 .optionGroup{
+//                     .title{
+//                         .arrow{
+//                             background-image: url("../ico/contraer.png");
+//                         }
+//                     }
+//                 }
+
+//                 .option{
+//                     color: #202020;
+//                     border: solid transparent 1px;
+                    
+//                     &:hover{
+//                         border: solid gray 1px;
+//                         background: #FFFFFF;
+//                         &:active{
+//                             background: darkgray;
+//                         }
+//                     }
+//                 }
+        
+//                 &:hover > .title{
+//                     background: #FFFFFF;
+//                 }
+//             }
+//         }
+//     }
+
+//     &_dark{
+//         > .main, .header{
+//             background: #000000e7;
+//             color: #FFFFFF;
+
+//             .listView{
+//                 background: inherit;
+//                 background:#DADADA08;
+
+//                 .optionGroup .title .arrow{
+//                     background-image: url("../ico/contraer_FFF.png");
+//                 }
+
+//                 .option{
+//                     color: #9c9c9c;
+//                     border: solid transparent 1px;
+//                     border-left: none;
+//                     border-right: none;
+                    
+//                     &:hover{
+//                         border-color: gray;
+//                         background: #141414;
+//                         color: #DADADA;
+//                         &:active{
+//                             background: red;
+//                         }
+//                     }
+//                 }
+        
+//                 .optionGroup{
+//                     .selected{
+//                         background: #212121;
+//                     }
+//                     &:hover > .title{
+//                         background: #181818;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
